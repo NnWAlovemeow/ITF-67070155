@@ -1,0 +1,28 @@
+*{
+    margin: 10px;
+}
+
+p{
+    font-size: 45px;
+}
+.navbar{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(184, 255, 231);
+    column-gap: 5%;
+    padding: 50px;
+    justify-content: center;
+    border-style: double;
+}
+.nav-item{
+    background-color: white;
+    padding: 10px;
+    border-style: solid;
+    text-align: center;
+}
+
+.foo{
+    justify-content: center;
+    background-color: rgb(218, 185, 248);
+    text-align: center;
+}
