@@ -1,3 +1,6 @@
+.center{
+    text-align: center;
+}
 .profile{
     width: 300px;
     height: 300px;
@@ -6,6 +9,7 @@
     background-size: cover;
     border-radius: 50%;
     position: relative;
+    margin: auto auto;
 }
 
 .notify{

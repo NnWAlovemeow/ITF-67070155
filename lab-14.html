@@ -7,84 +7,84 @@
     <link rel="stylesheet" href="lab14.css">
 </head>
 <body>
-    <div class="profile" id="profile">
-        <div class="notify"><p>1</p></div>
+    <div class="center">
+        <div class="profile" id="profile">
+            <div class="notify"><p>1</p></div>
+        </div>
+        <h1 id="user"> Username, ok</h1>
+        <p>
+            <label> Set Username </label><input type="text" id="name">
+            <button onclick="setName()"> Set </button>
+        </p>
+        <p><label> Set Profile Image  </label>
+            <input type="text" id="img">
+            <button onclick="setImg()"> Set </button>
+        </p>
+        <br><p><b><h2>Phone Number List</h2></b></p>
+        <div style="display : flex; gap: 10px; justify-content: center;">
+            <input class="mb-4" type="text" id="phonename" placeholder="Name">
+            <input class="mb-4" type="text" id="phone" placeholder="Tel">
+            <button onclick="addPhone()" style="height: fit-content;"> ADD </button>
+            <label>
+                <button onclick="saveCSV()">EXPORT</button>
+            </label>
+        </div>
+        <table id="phonetable" border="1" style="width: 500px;">
+            <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>phonenumber</th>
+            </tr>
+            <tr>
+                <td> A </td>
+                <td> M </td>
+                <td> G </td>
+            </tr>
+        </table>
+        <div class="container">
+
+        </div>
+
+        <script>
+            const username = document.getElementById("user");
+            const input = document.getElementById("name");
+            const img = document.getElementById("img");
+            const profile = document.getElementById("profile");
+            const newdiv = document.getElementsByClassName("container")[0];
+            const name1 = document.getElementById("name1")
+            const tel = document.getElementById("tel")
+
+            function setName(){
+                username.textContent = input.value + ", ok";
+                input.value = "";
+            }
+            function setImg(){
+                profile.style.backgroundImage = "url(" + img.value + " )";
+                console.log(img.value);
+                img.value = "";
+            }
+            function setName1(){
+                name1.textContent = input.value;
+                input.value = "";
+            }
+            function addParagraph(){
+                const newpara = document.createElement9("p");
+                newpara.textContent = "new paragraph"
+                newdiv.appendChild(newpara);
+            }
+            function saveCSV() {
+                const csvContent = phonenumber.map(row => row.join(",")).join("\n"); // Convert array to CSV string
+                    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+                    const link = document.createElement("a");
+                    const url = URL.createObjectURL(blob);
+                    link.setAttribute("href", url);
+                    link.setAttribute("download", "data.csv");
+                    link.style.visibility = "hidden";
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+            }
+        </script>
     </div>
-    <h1 id="user"> Username, ok</h1>
-    <label> Set Username </label><input type="text" id="name"><button onclick="setName()"> Set </button>
-    <p><label> Set Profile Image  </label><input type="text" id="img"><button onclick="setImg()"> Set </button></p>
-    <p> <input type="text" id="name1">
-        <input type="text" id="tel">
-        <button onclick="setName1()"> ADD </button>
-        <button onclick ="setTel()"> EXPORT </button>
-    </p>
-    <table style="border: 1px solid black;"> 
-        <tr style="border: 1px solid black;">
-            <td style="border: 1px solid black;"> 
-                No
-            </td>
-            <td style="border: 1px solid black;"> 
-                Name
-            </td>
-            <td style="border: 1px solid black;"> 
-                Phone Number
-            </td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid black;"> 
-                No
-            </td>
-            <td style="border: 1px solid black;"> 
-                Name
-            </td>
-            <td style="border: 1px solid black;"> 
-                Phone Number
-            </td>
-        </tr>
-    </table>
-    <div class="container">
-
-    </div>
-
-    <script>
-        const username = document.getElementById("user");
-        const input = document.getElementById("name");
-        const img = document.getElementById("img");
-        const profile = document.getElementById("profile");
-        const newdiv = document.getElementsByClassName("container")[0];
-        const name1 = document.getElementById("name1")
-        const tel = document.getElementById("tel")
-
-        function setName(){
-            username.textContent = input.value + ", ok";
-            input.value = "";
-        }
-        function setImg(){
-            profile.style.backgroundImage = "url(" + img.value + " )";
-            console.log(img.value);
-            img.value = "";
-        }
-        function setName1(){
-            name1.textContent = input.value;
-            input.value = "";
-        }
-        function addParagraph(){
-            const newpara = document.createElement9("p");
-            newpara.textContent = "new paragraph"
-            newdiv.appendChild(newpara);
-        }
-        function saveCSV() {
-            const csvContent = phonenumber.map(row => row.join(",")).join("\n"); // Convert array to CSV string
-                const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-                const link = document.createElement("a");
-                const url = URL.createObjectURL(blob);
-                link.setAttribute("href", url);
-                link.setAttribute("download", "data.csv");
-                link.style.visibility = "hidden";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-        }
-    </script>
 </body>
 </html>
