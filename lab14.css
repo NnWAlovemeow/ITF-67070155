@@ -1,5 +1,7 @@
 .center{
     text-align: center;
+    justify-content: center;
+    vertical-align: middle;
 }
 .profile{
     width: 300px;
@@ -23,4 +25,7 @@
     position: absolute;
     bottom: 15px;
     right: 20px;
+}
+.mb-4 {
+    margin-bottom: 16px;
 }
